@@ -7,6 +7,8 @@ Este projeto é uma página web desenvolvida como parte de um trabalho acadêmic
 - **Bootstrap**: Utilizado para o design responsivo e componentes estilizados.
 - **Font Awesome**: Ícones para melhorar a interface do usuário.
 - **Google Fonts**: Fontes personalizadas para o site.
+- **PHP**: Linguagem de programação utilizada para gerar a galeria de cachorros dinamicamente e conexão com o banco de dados.
+- **JavaScript**: Adiciona interatividade à página, permitindo a exibição de informações adicionais sobre os cachorros.
 
 ## Estrutura do Projeto
 
@@ -16,6 +18,7 @@ O projeto é composto pelos seguintes arquivos e diretórios:
 - `css/`: Contém o arquivo `styles.css` para estilos personalizados.
 - `js/`: Contém o arquivo `scripts.js` para adicionar interatividade com JavaScript.
 - `index.php`: Página principal do site, onde a galeria de cachorros é exibida.
+- [/uploads](./uploads): Contém as imagens dos pets que serão exibidas na galeria.
 - `README.md`: Este arquivo, contendo informações sobre o projeto.
 
 ## Como Executar
