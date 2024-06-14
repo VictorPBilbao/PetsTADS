@@ -18,7 +18,7 @@ O projeto é composto pelos seguintes arquivos e diretórios:
 - `css/`: Contém o arquivo `styles.css` para estilos personalizados.
 - `js/`: Contém o arquivo `scripts.js` para adicionar interatividade com JavaScript.
 - `index.php`: Página principal do site, onde a galeria de cachorros é exibida.
-- [/uploads](./uploads): Contém as imagens dos pets que serão exibidas na galeria.
+- `[/uploads](./uploads)`: Contém as imagens dos pets que serão exibidas na galeria.
 - `README.md`: Este arquivo, contendo informações sobre o projeto.
 
 ## Como Executar
