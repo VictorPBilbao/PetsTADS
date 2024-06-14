@@ -45,16 +45,19 @@
                 </div>
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-11 col-xl-9 col-xxl-8">
-                        <?php for ($i = 1; $i <= 5; $i++) : ?>
+                        <?php include_once 'get_total_dogs.php';
+                        for ($i = 0; $i < $total_dogs; $i++) : ?>
                             <!-- Project Card -->
                             <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                                 <div class="card-body p-0">
                                     <div class="d-flex align-items-center">
                                         <div class="p-5">
-                                            <h2 class="fw-bolder">Nome do Cachorro <?php echo $i; ?></h2>
-                                            <p>Aqui vai uma breve descrição do cachorro <?php echo $i; ?>. Ele é amigável, gosta de brincar e é muito carinhoso, além de ser muito fofo.</p>
+                                            <h2 class="fw-bolder"><?php echo $result[$i]['name']; ?></h2>
+                                            <p>
+                                                <?php echo $result[$i]['description']; ?>
+                                            </p>
                                         </div>
-                                        <img class="img-fluid" src="https://dummyimage.com/500x400/343a40/6c757d" alt="..." />
+                                        <img class="img-fluid" src="./<?php echo $result[$i]['image']; ?>" alt="..." style="width: 500px; height: 400px; object-fit: cover;" />
                                     </div>
                                 </div>
                                 <!-- Icons -->
