@@ -30,7 +30,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="https://github.com/your-username/your-repository">Github</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/VictorPBilbao/PetsTADS">
+                                <i class="fab fa-github"></i>
+                                Github
+                            </a>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="projects.html">Documentação</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contato</a></li>
                     </ul>
