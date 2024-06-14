@@ -18,8 +18,10 @@ $description = $_POST['description'];
 $picture = $_FILES['picture'];
 
 // Validate and move the uploaded file
-$targetDirectory = "./uploads/";
-$targetFile = $targetDirectory . basename($picture['name']);
+$targetDirectory = "uploads/";
+$extension = pathinfo($picture['name'], PATHINFO_EXTENSION);
+$uniqueFileName = uniqid() . '.' . $extension;
+$targetFile = $targetDirectory . $uniqueFileName;
 move_uploaded_file($picture['tmp_name'], $targetFile);
 
 // Save data to the database
