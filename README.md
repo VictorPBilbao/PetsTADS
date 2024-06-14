@@ -1,6 +1,12 @@
 # Trabalho de Web 1
 
-Este projeto é uma página web desenvolvida como parte de um trabalho acadêmico para a disciplina de Web 1. O tema central do site são os "Cachorros Fofos do TADS", apresentando uma galeria de cachorros adoráveis.
+Este projeto é uma página web desenvolvida como parte de um trabalho acadêmico para a disciplina de Web 1. O tema central do site são os "Pets Fofos do TADS", apresentando uma galeria de pets adoráveis.
+
+## Galeria de Screenshots
+
+![Gif do site](./assets/msedge_2rz9YuWhbc.gif)
+
+![Adicionar um Pet](./assets/adicionar_pet.png)
 
 ## Recursos
 
@@ -9,16 +15,17 @@ Este projeto é uma página web desenvolvida como parte de um trabalho acadêmic
 - **Google Fonts**: Fontes personalizadas para o site.
 - **PHP**: Linguagem de programação utilizada para gerar a galeria de cachorros dinamicamente e conexão com o banco de dados.
 - **JavaScript**: Adiciona interatividade à página, permitindo a exibição de informações adicionais sobre os cachorros.
+- **SurrealDB**: Banco de dados utilizado para armazenar informações sobre os pets.
 
 ## Estrutura do Projeto
 
-O projeto é composto pelos seguintes arquivos e diretórios:
+O projeto é composto pelos principais seguintes arquivos e diretórios:
 
-- `assets/`: Diretório para armazenar imagens e outros recursos estáticos.
-- `css/`: Contém o arquivo `styles.css` para estilos personalizados.
-- `js/`: Contém o arquivo `scripts.js` para adicionar interatividade com JavaScript.
-- `index.php`: Página principal do site, onde a galeria de cachorros é exibida.
-- `[/uploads](./uploads)`: Contém as imagens dos pets que serão exibidas na galeria.
+- [`assets/`](./assets): Diretório para armazenar imagens e outros recursos estáticos.
+- [`css/`](./css): Contém o arquivo `styles.css` para estilos personalizados.
+- [`js/`](./js): Contém o arquivo `scripts.js` para adicionar interatividade com JavaScript.
+- [`index.php`](./index.php): Página principal do site, onde a galeria de cachorros é exibida.
+- [`/uploads`](./uploads): Contém as imagens dos pets que serão exibidas na galeria.
 - `README.md`: Este arquivo, contendo informações sobre o projeto.
 
 ## Como Executar
