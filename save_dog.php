@@ -66,7 +66,7 @@ $db->query($query);
         <!-- Navigation (You can copy the navigation bar from index.php or customize as needed) -->
         <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
             <div class="container px-5">
-                <a class="navbar-brand" href="index.php"><span class="fw-bolder text-primary">Start Bootstrap</span></a>
+                <a class="navbar-brand" href="index.php"><span class="fw-bolder text-primary">Pets do TADS</span></a>
                 <!-- Add other navigation links if necessary -->
             </div>
         </nav>

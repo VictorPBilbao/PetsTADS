@@ -22,7 +22,7 @@
         <!-- Navigation (You can copy the navigation bar from index.php or customize as needed) -->
         <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
             <div class="container px-5">
-                <a class="navbar-brand" href="index.php"><span class="fw-bolder text-primary">Start Bootstrap</span></a>
+                <a class="navbar-brand" href="index.php"><span class="fw-bolder text-primary">Pets do TADS</span></a>
                 <!-- Add other navigation links if necessary -->
             </div>
         </nav>
@@ -30,24 +30,33 @@
         <section class="py-5">
             <div class="container px-5 my-5">
                 <div class="text-center mb-5">
-                    <h1 class="fw-bolder">Add a New Dog</h1>
+                    <h1 class="fw-bolder">Adicione seu Pet! 🐶🐈</h1>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <form action="save_dog.php" method="post" enctype="multipart/form-data">
                             <div class="form-group mb-3">
-                                <label for="name" class="form-label">Dog's Name:</label>
+                                <label for="name" class="form-label">Nome do Pet:</label>
                                 <input type="text" class="form-control" id="name" name="name" required>
                             </div>
                             <div class="form-group mb-3">
-                                <label for="description" class="form-label">Description:</label>
-                                <textarea class="form-control" id="description" name="description" required></textarea>
+                                <label for="description" class="form-label">Descrição:</label>
+                                <textarea class="form-control" id="description" name="description" required maxlength="300" oninput="updateCounter()"></textarea>
+                                <small id="counter" class="form-text text-muted">300</small>
                             </div>
+                            <script>
+                                function updateCounter() {
+                                    const textarea = document.getElementById('description');
+                                    const counter = document.getElementById('counter');
+                                    const remainingChars = 300 - textarea.value.length;
+                                    counter.textContent = `${remainingChars}`;
+                                }
+                            </script>
                             <div class="form-group mb-3">
-                                <label for="picture" class="form-label">Picture:</label>
+                                <label for="picture" class="form-label">Imagem:</label>
                                 <input type="file" class="form-control" id="picture" name="picture" accept="image/*" required>
                             </div>
-                            <button type="submit" class="btn btn-primary">Add Dog</button>
+                            <button type="submit" class="btn btn-primary" required>Adicionar Pet</button>
                         </form>
                     </div>
                 </div>
