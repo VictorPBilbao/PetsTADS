@@ -37,7 +37,7 @@ Para visualizar o projeto, você precisa ter um servidor PHP instalado e configu
 
 ## Licença
 
-Este projeto é distribuído sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+Este projeto é distribuído sob a licença MIT. Veja o arquivo [`LICENSE`](./LICENSE) para mais detalhes.
 
 ## Agradecimentos
 
