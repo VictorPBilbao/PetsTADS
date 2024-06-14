@@ -77,7 +77,7 @@
             <div class="container px-5 my-5">
                 <div class="text-center">
                     <h2 class="display-4 fw-bolder mb-4">Adicione seu pet</h2>
-                    <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="contact.html">Clique aqui</a>
+                    <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="adicionar.php">Clique aqui</a>
                 </div>
             </div>
         </section>
