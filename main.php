@@ -1,68 +1,46 @@
 <?php
-require_once 'vendor/autoload.php';
-
-
-// Make a new instance of the SurrealDB class. Use the ws or wss protocol for having WebSocket functionality.
-$db = new Surreal\Surreal();
-
-$db->connect("http://localhost:8000", [
-    "namespace" => "main",
-    "database" => "main"
-]);
-
-// We want to authenticate as a root user.
-$token = $db->signin([
-    "user" => "root",
-    "pass" => "root"
-]);
-
-// create a new table
-$db->query("DEFINE TABLE IF NOT EXISTS dog SCHEMAFULL");
-
-// insert schema
-$db->query("
-    DEFINE FIELD name ON TABLE dog TYPE string;
-    DEFINE FIELD image ON TABLE dog TYPE string;
-    DEFINE FIELD description ON TABLE dog TYPE string;
-");
-
-// insert data
-
-$db->query("
-    CREATE dog CONTENT {
-        name: 'Dog 1',
-        image: 'https://www.google.com',
-        description: 'This is a dog'
+function runDbCommand($sqlCommand)
+{
+    // Initialize a cURL session
+    $curl = curl_init();
+    // Set the URL to send the request to
+    curl_setopt($curl, CURLOPT_URL, "https://surrealdb-deploy.fly.dev/sql");
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    // Follow redirects
+    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+    // Set the method to POST
+    curl_setopt($curl, CURLOPT_POST, true);
+    // Set the headers
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+        "Accept: application/json",
+        "NS: main",
+        "DB: main",
+        "Content-Type: text/plain",
+        "Authorization: Basic cm9vdDpyb290"
+    ));
+    // Set the POST data to the SQL command
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $sqlCommand);
+    // Return the transfer as a string instead of outputting it
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    // Execute the request and store the response
+    $response = curl_exec($curl);
+    if (curl_errno($curl)) {
+        echo 'Error:' . curl_error($curl);
+        curl_close($curl);
+        return null; // Return null in case of an error
+    } else {
+        // Convert JSON response to PHP object
+        $data = json_decode($response);
+        // Optionally, check if the conversion was successful
+        if (json_last_error() === JSON_ERROR_NONE) {
+            // Close the cURL session
+            curl_close($curl);
+            // Return the result
+            return $data[0]->result;
+        } else {
+            echo "Error decoding JSON: " . json_last_error_msg();
+            curl_close($curl);
+            return null; // Return null if JSON decoding fails
+        }
     }
-");
-
-$db->query("
-    CREATE dog CONTENT {
-        name: 'Dog 2',
-        image: 'https://www.google.com',
-        description: 'This is yet another dog'
-    }
-");
-
-$db->query("
-    CREATE dog CONTENT {
-        name: 'Dog 3',
-        image: 'https://www.google.com',
-        description: 'This is also another dog'
-    }
-");
-
-// Create a new person in the database with a custom id.
-$person = $db->create("dog", [
-    "name" => "Dog 4",
-    "image" => "https://www.google.com",
-    "description" => "This is also another dogggg"
-]);
-
-$total_dogs = $db->query("SELECT name FROM dog")[0]['result'];
-
-print_r($total_dogs);
-echo "Total dogs: " . count($total_dogs) . "\n";
-
-
-echo "Connected to the database\n";
+}

@@ -4,17 +4,7 @@
 
 <?php
 require_once 'vendor/autoload.php';
-
-// Assuming you have a function to connect to your database
-$db = new Surreal\Surreal();
-$db->connect("http://localhost:8000", [
-    "namespace" => "main",
-    "database" => "main"
-]);
-$db->signin([
-    "user" => "root",
-    "pass" => "root"
-]);
+require_once 'main.php';
 
 // Process form data
 $name = $_POST['name'];
@@ -28,13 +18,12 @@ $uniqueFileName = uniqid() . '.' . $extension;
 $targetFile = $targetDirectory . $uniqueFileName;
 move_uploaded_file($picture['tmp_name'], $targetFile);
 
-// Save data to the database
-$query = "CREATE dog CONTENT {
+runDbCommand("
+CREATE Pets CONTENT {
     name: '$name',
     image: '$targetFile',
     description: '$description'
-}";
-$db->query($query);
+}")
 
 ?>
 
