@@ -9,7 +9,7 @@ require_once 'main.php';
 use Google\Cloud\Storage\StorageClient;
 
 // Set this to the path of your credentials file
-putenv('GOOGLE_APPLICATION_CREDENTIALS=C:\Users\victo\Desktop\petstads-a17ce7d183fd.json');
+putenv('GOOGLE_APPLICATION_CREDENTIALS=./credentials.json');
 
 // Instantiate a Google Cloud Storage client
 $storage = new StorageClient();
