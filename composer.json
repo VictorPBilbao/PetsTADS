@@ -13,6 +13,6 @@
         }
     ],
     "require": {
-        "surrealdb/surrealdb.php": "dev-main"
+        "google/cloud-storage": "^1.42"
     }
 }
