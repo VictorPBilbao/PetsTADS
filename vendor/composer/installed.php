@@ -3,7 +3,7 @@
         'name' => 'victo/projeto-final-web',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '14c561c7790a7964732e31cc3a3f509457513e3a',
+        'reference' => 'e8dd3218024ec1e8051fa01307ebd3e01e86b5e5',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -268,7 +268,7 @@
         'victo/projeto-final-web' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '14c561c7790a7964732e31cc3a3f509457513e3a',
+            'reference' => 'e8dd3218024ec1e8051fa01307ebd3e01e86b5e5',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
