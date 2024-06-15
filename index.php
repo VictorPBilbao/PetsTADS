@@ -66,13 +66,24 @@
                                     </div>
                                 </div>
                                 <!-- Icons -->
-                                <div class="card-footer bg-transparent d-flex justify-content-start">
-                                    <a href="#" class="me-3 text-decoration-none text-dark">
-                                        <i class="far fa-heart heart-icon"></i>
-                                    </a>
-                                    <a href="#" class="text-decoration-none text-dark">
-                                        <i class="far fa-comment"></i>
-                                    </a>
+                                <div class="card-footer bg-transparent d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <a href="#" class="me-3 text-decoration-none text-dark">
+                                            <i class="far fa-heart heart-icon"></i>
+                                        </a>
+                                        <a href="#" class="text-decoration-none text-dark">
+                                            <i class="far fa-comment"></i>
+                                        </a>
+                                    </div>
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                                            <li><a class="dropdown-item" href="#">Delete</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         <?php endfor; ?>
