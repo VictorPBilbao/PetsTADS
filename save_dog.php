@@ -23,7 +23,7 @@ CREATE Pets CONTENT {
     name: '$name',
     image: '$targetFile',
     description: '$description'
-}")
+}");
 
 ?>
 
