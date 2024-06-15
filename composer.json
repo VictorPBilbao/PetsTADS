@@ -11,5 +11,8 @@
             "name": "VictorPBilbao",
             "email": "victor.pasini.bilbao@gmail.com"
         }
-    ]
+    ],
+    "require": {
+        "google/cloud-storage": "^1.42"
+    }
 }

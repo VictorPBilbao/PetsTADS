@@ -6,6 +6,33 @@
 require_once 'vendor/autoload.php';
 require_once 'main.php';
 
+use Google\Cloud\Storage\StorageClient;
+
+// Set this to the path of your credentials file
+putenv('GOOGLE_APPLICATION_CREDENTIALS=C:\Users\victo\Desktop\petstads-a17ce7d183fd.json');
+
+// Instantiate a Google Cloud Storage client
+$storage = new StorageClient();
+
+// Function to upload image to Google Cloud Storage
+function uploadImageToBucket($imagePath, $imageName, $bucketName)
+{
+    global $storage; // Use the $storage client created outside the function
+    $bucket = $storage->bucket($bucketName);
+    $imageResource = fopen($imagePath, 'r');
+    $object = $bucket->upload($imageResource, [
+        'name' => $imageName
+    ]);
+    return $object->name();
+}
+
+// Function to retrieve image URL from Google Cloud Storage
+function retrieveImageFromBucket($imageName, $bucketName)
+{
+    // Assuming the bucket's files are publicly accessible, construct the URL
+    return "https://storage.googleapis.com/$bucketName/$imageName";
+}
+
 // Process form data
 $name = $_POST['name'];
 $description = $_POST['description'];
@@ -16,14 +43,25 @@ $targetDirectory = "uploads/";
 $extension = pathinfo($picture['name'], PATHINFO_EXTENSION);
 $uniqueFileName = uniqid() . '.' . $extension;
 $targetFile = $targetDirectory . $uniqueFileName;
-move_uploaded_file($picture['tmp_name'], $targetFile);
 
-runDbCommand("
-CREATE Pets CONTENT {
-    name: '$name',
-    image: '$targetFile',
-    description: '$description'
-}");
+if (move_uploaded_file($picture['tmp_name'], $targetFile)) {
+    // Upload to Google Cloud Storage
+    $bucketName = 'pets_uploads'; // Your Google Cloud Storage Bucket Name
+    $uploadedImageName = uploadImageToBucket($targetFile, $uniqueFileName, $bucketName);
+    $imageUrl = retrieveImageFromBucket($uploadedImageName, $bucketName);
+
+    // Here, you can store $imageUrl in your database instead of the local file path
+    runDbCommand("
+    CREATE Pets CONTENT {
+        name: '$name',
+        image: '$imageUrl',
+        description: '$description'
+    }");
+
+    echo "Image uploaded and fetched successfully.";
+} else {
+    echo "Failed to upload image.";
+}
 
 ?>
 
