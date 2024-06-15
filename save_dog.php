@@ -56,8 +56,6 @@ if ($uploadedImageName) {
         image: '$imageUrl',
         description: '$description'
     }");
-
-    echo "Image uploaded and fetched successfully.";
 } else {
     echo "Failed to upload image.";
 }
