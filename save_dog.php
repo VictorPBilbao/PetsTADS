@@ -38,16 +38,15 @@ $name = $_POST['name'];
 $description = $_POST['description'];
 $picture = $_FILES['picture'];
 
-// Validate and move the uploaded file
-$targetDirectory = "uploads/";
+// Generate unique file name for the uploaded file
 $extension = pathinfo($picture['name'], PATHINFO_EXTENSION);
 $uniqueFileName = uniqid() . '.' . $extension;
-$targetFile = $targetDirectory . $uniqueFileName;
 
-if (move_uploaded_file($picture['tmp_name'], $targetFile)) {
-    // Upload to Google Cloud Storage
-    $bucketName = 'pets_uploads'; // Your Google Cloud Storage Bucket Name
-    $uploadedImageName = uploadImageToBucket($targetFile, $uniqueFileName, $bucketName);
+// Upload to Google Cloud Storage
+$bucketName = 'pets_uploads'; // Your Google Cloud Storage Bucket Name
+$uploadedImageName = uploadImageToBucket($picture['tmp_name'], $uniqueFileName, $bucketName);
+
+if ($uploadedImageName) {
     $imageUrl = retrieveImageFromBucket($uploadedImageName, $bucketName);
 
     // Here, you can store $imageUrl in your database instead of the local file path
