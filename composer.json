@@ -11,8 +11,5 @@
             "name": "VictorPBilbao",
             "email": "victor.pasini.bilbao@gmail.com"
         }
-    ],
-    "require": {
-        "surrealdb/surrealdb.php": "dev-main"
-    }
+    ]
 }
