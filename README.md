@@ -2,13 +2,13 @@
 
 Este projeto é uma página web desenvolvida como parte de um trabalho acadêmico para a disciplina de Web 1. O tema central do site são os "Pets Fofos do TADS", apresentando uma galeria de pets adoráveis.
 
-## Galeria de Screenshots
+## 🖼️ Galeria de Screenshots
 
 ![Gif do site](./assets/msedge_2rz9YuWhbc.gif)
 
 ![Adicionar um Pet](./assets/adicionar_pet.png)
 
-## Recursos
+## 📚 Recursos
 
 - **Bootstrap & Bootstrap Icons**: Utilizados para o design responsivo, componentes estilizados e ícones.
 - **Font Awesome**: Ícones adicionais para melhorar a interface do usuário.
@@ -17,7 +17,7 @@ Este projeto é uma página web desenvolvida como parte de um trabalho acadêmic
 - **JavaScript**: Adiciona interatividade à página, permitindo a exibição de informações adicionais sobre os cachorros.
 - **SurrealDB**: Banco de dados utilizado para armazenar informações sobre os pets.
 
-## Estrutura do Projeto
+## 🏗 Estrutura do Projeto
 
 O projeto é composto pelos principais seguintes arquivos e diretórios:
 
@@ -32,7 +32,7 @@ O projeto é composto pelos principais seguintes arquivos e diretórios:
 - [`README.md`](./README.md): Este arquivo, contendo informações sobre o projeto.
 - [`LICENSE`](./LICENSE): O arquivo de licença do projeto.
 
-## Como Executar
+## 🚀 Como Executar
 
 Para visualizar o projeto, você precisa ter PHP instalado e configurado na sua máquina e no path do sistema.
 
@@ -41,7 +41,7 @@ Para visualizar o projeto, você precisa ter PHP instalado e configurado na sua 
 3. Execute o comando `php -S localhost:8000` para iniciar o servidor PHP na porta 8000.
 2. Acesse o projeto através do navegador, utilizando o endereço configurado para o seu servidor local (por exemplo, `http://localhost/8000`).
 
-## Softwares Utilizados
+## 🛠 Softwares Utilizados
 
 - **Visual Studio Code**: Editor de código utilizado para desenvolver o projeto, com ajuda da extensão `PHP Server`.
 - **SurrealDB**: Banco de dados utilizado para armazenar informações sobre os pets.
@@ -51,7 +51,7 @@ Para visualizar o projeto, você precisa ter PHP instalado e configurado na sua 
 - **Google Artifact Registry**: Serviço utilizado para armazenar a imagem do container do projeto.
 - **Google Cloud Run**: Serviço utilizado para hospedar o container do projeto e disponibilizá-lo na web.
 
-## Roadmap
+## 🛣Roadmap
 
 - [ ] Criar um formulário para cadastro no site com login e senha
 - [ ] Adicionar a funcionalidade de login e logout
@@ -59,11 +59,11 @@ Para visualizar o projeto, você precisa ter PHP instalado e configurado na sua 
 - [ ] Adicionar a funcionalidade de editar e excluir comentários
 - [ ] Deletar a imagem do Google Cloud Storage quando um pet é excluído
 
-## Licença
+## 📜Licença
 
 Este projeto é distribuído sob a licença MIT. Veja o arquivo [`LICENSE`](./LICENSE) para mais detalhes.
 
-## Agradecimentos
+## 👏Agradecimentos
 
 - **Start Bootstrap**: Por fornecer o template inicial utilizado neste projeto.
 - **Professores e colegas**: Por todo o apoio e conhecimento compartilhado.
