@@ -3,5 +3,5 @@
 require_once 'vendor/autoload.php';
 require_once 'main.php';
 
-$result = runDbCommand("SELECT * FROM Pets");
+$result = runDbCommand("SELECT * FROM Pets ORDER BY name ASC;");
 $total_pets = count($result);
