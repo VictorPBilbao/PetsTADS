@@ -27,12 +27,6 @@ if (isset($_POST['OldImageUrl']) && !empty($_POST['OldImageUrl'])) {
         ";
 
         $result = runDbCommand($command);
-        // Check if the update was successful
-        if ($result) {
-            echo "Pet updated successfully.";
-        } else {
-            echo "Error updating pet.";
-        }
     } else {
         echo "Failed to upload image.";
     }

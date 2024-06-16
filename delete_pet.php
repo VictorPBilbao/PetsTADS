@@ -9,21 +9,14 @@ if (isset($_GET['imageUrl']) && !empty($_GET['imageUrl'])) {
     // Ensure to use prepared statements or proper escaping to prevent SQL injection
     $sqlCommand = "DELETE FROM Pets WHERE image = '" . $imageUrl . "'";
 
-    echo $sqlCommand;
 
     // Execute the SQL command using the runDbCommand function with prepared statement
     $result = runDbCommand($sqlCommand); // Assuming runDbCommand supports prepared statements
 
-    // Check if the deletion was successful
-    if ($result) {
-        echo "Pet deleted successfully.";
-    } else {
-        echo "Error deleting pet.";
-    }
 } else {
     echo "Image URL not specified.";
 }
 
-// Redirect back to the index page after deletion
-header('Location: index.php');
+// Redirect back to the index page after deleting the pet
+header("Location: index.php");
 exit();
