@@ -58,6 +58,7 @@ Para visualizar o projeto, você precisa ter PHP instalado e configurado na sua 
 - [ ] Adicionar a funcionalidade de comentar e dar like nos pets
 - [ ] Adicionar a funcionalidade de editar e excluir comentários
 - [ ] Deletar a imagem do Google Cloud Storage quando um pet é excluído
+- [ ] Otimizar o código PHP para não exibir todos os pets de uma vez e sim de forma paginada
 
 ## 📜Licença
 
