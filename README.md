@@ -51,6 +51,14 @@ Para visualizar o projeto, você precisa ter PHP instalado e configurado na sua 
 - **Google Artifact Registry**: Serviço utilizado para armazenar a imagem do container do projeto.
 - **Google Cloud Run**: Serviço utilizado para hospedar o container do projeto e disponibilizá-lo na web.
 
+## Roadmap
+
+- [ ] Criar um formulário para cadastro no site com login e senha
+- [ ] Adicionar a funcionalidade de login e logout
+- [ ] Adicionar a funcionalidade de comentar e dar like nos pets
+- [ ] Adicionar a funcionalidade de editar e excluir comentários
+- [ ] Deletar a imagem do Google Cloud Storage quando um pet é excluído
+
 ## Licença
 
 Este projeto é distribuído sob a licença MIT. Veja o arquivo [`LICENSE`](./LICENSE) para mais detalhes.
