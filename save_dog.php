@@ -5,33 +5,7 @@
 <?php
 require_once 'vendor/autoload.php';
 require_once 'main.php';
-
-use Google\Cloud\Storage\StorageClient;
-
-// Set this to the path of your credentials file
-putenv('GOOGLE_APPLICATION_CREDENTIALS=./credentials.json');
-
-// Instantiate a Google Cloud Storage client
-$storage = new StorageClient();
-
-// Function to upload image to Google Cloud Storage
-function uploadImageToBucket($imagePath, $imageName, $bucketName)
-{
-    global $storage; // Use the $storage client created outside the function
-    $bucket = $storage->bucket($bucketName);
-    $imageResource = fopen($imagePath, 'r');
-    $object = $bucket->upload($imageResource, [
-        'name' => $imageName
-    ]);
-    return $object->name();
-}
-
-// Function to retrieve image URL from Google Cloud Storage
-function retrieveImageFromBucket($imageName, $bucketName)
-{
-    // Assuming the bucket's files are publicly accessible, construct the URL
-    return "https://storage.googleapis.com/$bucketName/$imageName";
-}
+require_once 'google_buckets_functions.php';
 
 // Process form data
 $name = $_POST['name'];

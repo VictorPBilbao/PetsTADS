@@ -80,7 +80,7 @@
                                             <i class="fas fa-ellipsis-v"></i>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <li><a class="dropdown-item" href="">Edit</a></li>
+                                            <li><a class="dropdown-item" href="edit_pet.php?imageUrl=<?php echo urlencode($result[$i]->image); ?>">Edit</a></li>
                                             <li><a class="dropdown-item" href="delete_pet.php?imageUrl=<?php echo urlencode($result[$i]->image); ?>">Delete</a></li>
                                         </ul>
                                     </div>
