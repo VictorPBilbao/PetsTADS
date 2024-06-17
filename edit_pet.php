@@ -1,3 +1,22 @@
+<?php
+require_once 'main.php'; // Ensure this file contains the runDbCommand function
+
+// Assuming $_GET['imageUrl'] is sanitized before use
+$imageUrl = htmlspecialchars($_GET['imageUrl']);
+
+// Prepare the SQL command to select the pet's name and description
+$sqlCommand = "SELECT name, description FROM Pets WHERE image = '" . $imageUrl . "'";
+
+// Execute the SQL command using the runDbCommand function with a prepared statement
+// Assuming runDbCommand is modified to handle prepared statements and returns an associative array
+$petDetails = runDbCommand($sqlCommand)[0];
+
+// Extract name and description if available
+$petName = $petDetails->name;
+$petDescription = $petDetails->description;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,12 +56,11 @@
                         <form action="edit_pet_database.php" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="OldImageUrl" value="<?php echo htmlspecialchars($_GET['imageUrl']); ?>">
                             <div class="form-group mb-3">
-                                <label for="name" class="form-label">Nome do Pet</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
+                                <input type="text" class="form-control" id="name" name="name" value="<?php echo $petName; ?>" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="description" class="form-label">Descrição:</label>
-                                <textarea class="form-control" id="description" name="description" required maxlength="300" oninput="updateCounter()"></textarea>
+                                <textarea class="form-control" id="description" name="description" required maxlength="300" oninput="updateCounter()"><?php echo $petDescription; ?></textarea>
                                 <small id="counter" class="form-text text-muted">300</small>
                             </div>
                             <script>
