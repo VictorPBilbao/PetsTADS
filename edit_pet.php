@@ -78,7 +78,10 @@ $petDescription = $petDetails->description;
                                 <label for="picture" class="form-label">Imagem:</label>
                                 <input type="file" class="form-control" id="picture" name="picture" accept="image/*" required>
                             </div>
-                            <button type="submit" class="btn btn-primary" required>Salvar alterações</button>
+                            <div class="w-100 d-flex align-items-center justify-content-between">
+                                <button type="submit" class="btn btn-primary" required>Salvar alterações</button>
+                                <a class="btn btn-primary" href="index.php">Voltar</a>
+                            </div>
                         </form>
                     </div>
                 </div>
