@@ -6239,6 +6239,11 @@ textarea.form-control-lg {
   }
 }
 
+@media (max-width: 800px) {
+  .card-pet {
+    flex-wrap: wrap;
+  }
+}
 @media (max-width: 991.98px) {
   .offcanvas-lg {
     position: fixed;
