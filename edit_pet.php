@@ -70,6 +70,9 @@ $petDescription = $petDetails->description;
                                     const remainingChars = 300 - textarea.value.length;
                                     counter.textContent = `${remainingChars}`;
                                 }
+
+                                // Call the updateCounter function on page load
+                                window.addEventListener('load', updateCounter);
                             </script>
                             <div class="form-group mb-3">
                                 <label for="picture" class="form-label">Imagem:</label>
