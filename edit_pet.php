@@ -1,3 +1,12 @@
+<?php
+$result = runDbCommand("SELECT * FROM Pets WHERE image LIKE " . $_GET['imageUrl']);
+
+if ($result && count($result) > 0) {
+  $pet = $result[0];
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,11 +47,13 @@
                             <input type="hidden" name="OldImageUrl" value="<?php echo htmlspecialchars($_GET['imageUrl']); ?>">
                             <div class="form-group mb-3">
                                 <label for="name" class="form-label">Nome do Pet</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
+                                <input type="text" class="form-control" id="name" name="name" value="<?php echo isset($pet) ? htmlspecialchars($pet->name) : ''; ?>" required>
                             </div>
                             <div class="form-group mb-3">
                                 <label for="description" class="form-label">Descrição:</label>
-                                <textarea class="form-control" id="description" name="description" required maxlength="300" oninput="updateCounter()"></textarea>
+                                <textarea class="form-control" id="description" name="description" required maxlength="300" oninput="updateCounter()">
+                                  <?php echo isset($pet) ? htmlspecialchars($pet->description) : ''; ?>
+                                </textarea>
                                 <small id="counter" class="form-text text-muted">300</small>
                             </div>
                             <script>
