@@ -62,7 +62,7 @@
                                                 <?php echo $result[$i]->description; ?>
                                             </p>
                                         </div>
-                                        <img class="img-fluid" src="<?php echo $result[$i]->image; ?>" alt="..." style="width: 500px; height: 400px; object-fit: cover;" />
+                                        <img class="img-fluid" src="<?php echo $result[$i]->image; ?>" alt="..." style="width: 500px; height: 400px;" />
                                     </div>
                                 </div>
                                 <!-- Icons -->
