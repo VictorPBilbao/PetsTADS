@@ -36,7 +36,7 @@
                                 Github
                             </a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="./README.md" target="_blank">Documentação</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./Documentação.pdf" target="_blank">Documentação</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contato</a></li>
                     </ul>
                 </div>
